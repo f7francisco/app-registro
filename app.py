@@ -15,7 +15,10 @@ def inserir():
     endereco = request.form.get('endereco')
     latitude = request.form.get('latitude') or 'N/A'
     longitude = request.form.get('longitude') or 'N/A'
-    data_hora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    import pytz
+    fuso_brasil = pytz.timezone('America/Sao_Paulo')
+    data_hora = datetime.now(fuso_brasil).strftime('%Y-%m-%d %H:%M:%S')
+
 
     registros.append({
         'Nome': nome,
