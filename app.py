@@ -17,7 +17,8 @@ def inserir():
     longitude = request.form.get('longitude') or 'N/A'
     import pytz
     fuso_brasil = pytz.timezone('America/Sao_Paulo')
-    data_hora = datetime.now(fuso_brasil).strftime('%Y-%m-%d %H:%M:%S')
+    data_hora = datetime.now(fuso_brasil).strftime('%d/%m/%Y %H:%M:%S')
+
 
 
     registros.append({
